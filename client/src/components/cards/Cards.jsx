@@ -63,6 +63,7 @@ export default function ImgMediaCard({ value, openDialog }) {
                 <video
                     src={value.videoURL}
                     className="w-full rounded-t-sm"
+                    onClick={()=>handlePlay(value)}
                 ></video>
                 <div className='flex justify-between pr-4 pl-4 pb-4'>
                     <div>

@@ -8,7 +8,6 @@ import { useNavigate } from "react-router-dom";
 function App() {
     const [isDialogOpen, setIsDialogOpen] = useState(false);
     const [embedCode, setEmbedCode] = useState("");
-    const navigate = useNavigate();
     const [selectedVideo, setSelectedVideo] = useState(null);
 
     const { videos, setVideos } = useContext(videoContext);
@@ -46,10 +45,6 @@ function App() {
         }
     };
 
-    const handlePlay = (value)=>{
-        navigate(`/play`,{state: value._id});
-    }
-
     return (
         <>
             {videos.length > 0 ? (
@@ -57,7 +52,7 @@ function App() {
                     <div className="flex flex-wrap justify-center pt-1.5 gap-x-8 gap-y-1.5">
                         {videos && videos.map((value) => {
                             return (
-                                <div onClick={()=>handlePlay(value)} className="cursor-pointer">
+                                <div className="cursor-pointer">
                                     <ImgMediaCard value={value} openDialog={openDialog} key={value._id} />
                                 </div>
                             );
