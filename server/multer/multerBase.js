@@ -9,7 +9,8 @@ const uploadSingleVideo = async (req, res, next) => {
     const {title,description} = req.body;
     try {
         const response = await uploadOnCloudinary(path);
-        return await uploadToDB(title, description, response.url,req,res);
+        console.log(response)
+        return await uploadToDB(title, description, response.secure_url,req,res);
         // response.public_id
     } catch (error) {
         return res.status(500).json({message:"Server error", success:false});
@@ -52,7 +53,7 @@ const uploadProfile = async (req, res, next) => {
         const response = await uploadOnCloudinary(path);
         const updatedUser = await User.findByIdAndUpdate(_id, { $set: updateData }, { new: true });
 
-        return await uploadProfileinDB(_id, response.url, updatedUser, req, res);
+        return await uploadProfileinDB(_id, response.secure_url, updatedUser, req, res);
     } catch (error) {
         return res.status(500).json({ message: "Server error", success: false });
     }

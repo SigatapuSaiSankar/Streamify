@@ -53,7 +53,7 @@ export default function ImgMediaCard({ value, openDialog }) {
                 maxWidth: 345,
                 transition: "transform 0.3s, box-shadow 0.3s",
                 "&:hover": {
-                    transform: "scale(1.05)",
+                    transform: "scale(1.02)",
                     boxShadow: "0 8px 16px rgba(0, 0, 0, 0.2)",
                 },
             }}
@@ -72,12 +72,12 @@ export default function ImgMediaCard({ value, openDialog }) {
                     <div className='flex items-center'>
                         <button
                             onClick={() => openDialog(value)}
-                            className="mt-3 px-4 py-1.5 rounded-md hover:bg-blue-200 focus:ring-2 focus:ring-gray-200 text-xl text-blue-500"
+                            className="mt-3 px-4 py-1.5 rounded-md cursor-pointer hover:bg-blue-200 focus:ring-2 focus:ring-gray-200 text-xl text-blue-500"
                         >
                             <FaShareAlt />
                         </button>
                         <button
-                            className="mt-3 px-4 py-1.5 rounded-md hover:bg-blue-200 focus:ring-2 focus:ring-gray-200 text-xl text-blue-500"
+                            className="mt-3 px-4 py-1.5 rounded-md cursor-pointer hover:bg-blue-200 focus:ring-2 focus:ring-gray-200 text-xl text-blue-500"
                             onClick={()=>handlePlay(value)}
                         >
                             <FaPlay />
@@ -85,7 +85,7 @@ export default function ImgMediaCard({ value, openDialog }) {
                         {
                             role == 'admin' && (
                                 <button
-                                className="mt-3 px-4 py-1.5 rounded-md hover:bg-red-200 focus:ring-2 focus:ring-gray-200 text-2xl text-red-500"
+                                className="mt-3 px-4 py-1.5 rounded-md cursor-pointer hover:bg-red-200 focus:ring-2 focus:ring-gray-200 text-2xl text-red-500"
                                 onClick={()=>handleDelete(value)}
                             >
                                 <MdDelete />

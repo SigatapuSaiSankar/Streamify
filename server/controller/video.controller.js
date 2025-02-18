@@ -35,7 +35,7 @@ const uploadReview = async (req, res) => {
     try {
         const videoData = await videoInfo.findById(id);
 
-        console.log(videoData);
+        // console.log(videoData);
         if (!videoData) {
             return res.status(404).json({ message: "Video not found", success: false });
         }

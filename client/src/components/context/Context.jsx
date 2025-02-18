@@ -12,7 +12,7 @@ export const userContext = createContext(intitalValues);
 const reducer = (state, action) => {
     switch (action.type) {
         case "LOGIN_SUCCESSFUL":
-            console.log(action.payload.data);
+            // console.log(action.payload.data);
             return {
                 role: action.payload.data.role,
                 token: action.payload.token,
@@ -53,7 +53,7 @@ export default function Context({ children }) {
         localStorage.setItem('streamifyUser', JSON.stringify(state.user));
         localStorage.setItem('streamifyValid', state.valid);
     }, [state])
-    console.log(state);
+    // console.log(state);
     return (
         <userContext.Provider value={{ user: state.user, dispatch, role: state.role, token: state.token, valid: state.valid }}>
             {children}
